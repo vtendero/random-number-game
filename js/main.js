@@ -16,7 +16,7 @@ console.log('El número aleatorio es ' + randomNumber);
 function handlerButton (event) {
     inputNumber ();
     triesCounter ();
-};
+}
 
 buttonElement.addEventListener('click',handlerButton);
 
@@ -33,19 +33,26 @@ function inputNumber () {
     } else if (inputElementValue > randomNumber) {
         hintElement.innerHTML = 'Demasiado alto ¡sigue intentándolo!';
     } else {
-        hintElement.innerHTML ='Introduce un número para comenzar a jugar';
+        hintElement.innerHTML ='¡Ups! Introduce tu número';
     }
 }
 
 
 let counter = 0;
-
 function triesCounter () {
     if (hintElement.innerHTML === '¡Enhorabuena! Has acertado campeona') {
         counter += 0;
-        triesElement.innerHTML = 'Número de intentos: ' + counter;
+        triesElement.innerHTML = `Número de intentos: ${counter}`;
     } else {
         counter += 1;
-        triesElement.innerHTML = 'Número de intentos: ' + counter;
+        triesElement.innerHTML = `Número de intentos: ${counter}`;
     }
 }
+
+function handlerNoSubmit(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    buttonElement.click();
+  }
+}
+inputElement.addEventListener("keydown", handlerNoSubmit);
