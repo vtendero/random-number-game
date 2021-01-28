@@ -1,0 +1,44 @@
+.main {
+    padding: 40px;
+}
+
+/*TITLE*/
+.main__title {
+    font-family: 'Potta One';
+    font-weight: normal;
+    color: yellow;
+    background-color: red;
+    width: 480px;
+    text-align: center;
+    -webkit-text-stroke: 2px rgba(45, 205, 245, 0.986);
+}
+
+.main__image {
+    border-radius: 10px;
+}
+
+/*FORM*/
+.main__form {
+    padding-top: 20px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
+}
+
+.main__form--button {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: white;
+    background: black;
+    border-radius: 5px;
+}
+
+/*INFO*/
+.main__info {
+    font-family: Arial, Helvetica, sans-serif;
+     font-size: 18px;
+     
+}
+.main__info--title {
+    text-transform: uppercase;
+}

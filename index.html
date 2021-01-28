@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
     <title>Adivina el número</title>
 </head>
 <body class="page">
 
     <main class="main">
         <h1 class="main__title">Adivina el número</h1>
+        <img class="main__image" src="https://media.giphy.com/media/RHPF7jp3e5JqDV5vcN/giphy.gif" alt="Gif Toy Story" title="Gif Toy Story">
 
         <form class="main__form" action="enter-number" method="get">
             <label class="main__form--label" for="number">Introduce aquí tu número:</label>
             <input class="main__form--number js-number" type="number" name="number" id="number" value="">
-            <input class="main__form--submit js-button" type="button" name="button" id="button" value="Prueba">
+            <input class="main__form--button js-button" type="button" name="button" id="button" value="Prueba">
         </form>
 
         <div class="main__info">
