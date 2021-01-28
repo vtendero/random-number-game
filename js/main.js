@@ -15,9 +15,10 @@ let randomNumber = getRandomNumber(100);
 console.log('El número aleatorio es ' + randomNumber);
 
 
-//Número introducido
+//Recoge número introducido + pista + contador
 function handlerButton (event) {
     inputNumber ();
+    triesCounter ();
 };
 
 buttonElement.addEventListener('click',handlerButton);
@@ -37,5 +38,19 @@ function inputNumber () {
         hintElement.innerHTML = 'Demasiado alto ¡sigue intentándolo!';
     } else {
         hintElement.innerHTML ='Introduce un número para comenzar a jugar';
+    }
+}
+
+
+//Contador
+let counter = 0;
+
+function triesCounter () {
+    if (hintElement.innerHTML === '¡Enhorabuena! Has acertado campeona') {
+        counter += 0;
+        triesElement.innerHTML = 'Número de intentos: ' + counter;
+    } else {
+        counter += 1;
+        triesElement.innerHTML = 'Número de intentos: ' + counter;
     }
 }
