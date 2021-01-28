@@ -6,21 +6,21 @@
     <link rel="stylesheet" href="./css/main.css">
     <title>Adivina el número</title>
 </head>
-<body>
+<body class="page">
 
-    <main>
-        <h1>Adivina el número</h1>
+    <main class="main">
+        <h1 class="main__title">Adivina el número</h1>
 
-        <form action="enter-number" method="get">
-            <label for="number">Introduce aquí tu número:</label>
-            <input type="number" name="number" id="number" value="">
-            <input type="submit" name="button" id="button" value="Prueba">
+        <form class="main__form" action="enter-number" method="get">
+            <label class="main__form--label" for="number">Introduce aquí tu número:</label>
+            <input class="main__form--number js-number" type="number" name="number" id="number" value="">
+            <input class="main__form--submit js-submit" type="submit" name="button" id="button" value="Prueba">
         </form>
 
-        <div>
-            <p>Pista:</p>
-            <p>Escribe el número y dale a prueba</p>
-            <p>Número de intentos: 0</p>
+        <div class="main__info">
+            <h4 class="main__info--title">Pista:</h4>
+            <p class="main__info--hint js-hint">Escribe el número y dale a prueba</p>
+            <p class="main__info--tries js-tries">Número de intentos: 0</p>
         </div>
     </main>
     
