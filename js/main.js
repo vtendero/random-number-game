@@ -5,8 +5,6 @@ const buttonElement = document.querySelector('.js-button');
 const hintElement = document.querySelector('.js-hint');
 const triesElement =document.querySelector('.js-tries');
 
-
-//Número aleatorio 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
@@ -15,7 +13,6 @@ let randomNumber = getRandomNumber(100);
 console.log('El número aleatorio es ' + randomNumber);
 
 
-//Recoge número introducido + pista + contador
 function handlerButton (event) {
     inputNumber ();
     triesCounter ();
@@ -24,7 +21,6 @@ function handlerButton (event) {
 buttonElement.addEventListener('click',handlerButton);
 
 
-//Pista
 function inputNumber () {
     const inputElementValue = parseInt(inputElement.value);
     console.log('Número introducido ' + inputElementValue);
@@ -42,7 +38,6 @@ function inputNumber () {
 }
 
 
-//Contador
 let counter = 0;
 
 function triesCounter () {
