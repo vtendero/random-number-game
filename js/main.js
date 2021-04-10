@@ -1,58 +1,59 @@
 'use strict';
 
-const inputElement = document.querySelector('.js-number');
-const buttonElement = document.querySelector('.js-button');
-const hintElement = document.querySelector('.js-hint');
-const triesElement =document.querySelector('.js-tries');
+const INPUT_ELEMENT = document.querySelector('.js-number');
+const BUTTON_ELEMENT = document.querySelector('.js-button');
+const HINT_ELEMENT = document.querySelector('.js-hint');
+const TRIES_ELEMENT =document.querySelector('.js-tries');
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 100;
+
+let counter = 0;
+let randomNumber = getRandomNumber(MAX_NUMBER);
+console.log('El número aleatorio es ' + randomNumber);
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
 
-let randomNumber = getRandomNumber(100);
-console.log('El número aleatorio es ' + randomNumber);
-
-
-function handlerButton (event) {
-    inputNumber ();
-    triesCounter ();
+function handleButton(ev) {
+    const hintForNumber = getHint(parseInt(INPUT_ELEMENT.value));
+    console.log('Número introducido ' + parseInt(INPUT_ELEMENT.value));
+    showHint(HINT_ELEMENT, hintForNumber)
+    triesCounter();
 }
+BUTTON_ELEMENT.addEventListener('click',handleButton);
 
-buttonElement.addEventListener('click',handlerButton);
-
-
-function inputNumber () {
-    const inputElementValue = parseInt(inputElement.value);
-    console.log('Número introducido ' + inputElementValue);
-    if (inputElementValue === randomNumber) {
-        hintElement.innerHTML = '¡Enhorabuena! Has acertado campeona';
-    } else if (inputElementValue < 1  || inputElementValue > 100) {
-        hintElement.innerHTML = 'El número debe estar entre 1 y 100';
-    } else if (inputElementValue < randomNumber) {
-        hintElement.innerHTML = 'Demasiado bajo ¡sigue intentándolo!';
-    } else if (inputElementValue > randomNumber) {
-        hintElement.innerHTML = 'Demasiado alto ¡sigue intentándolo!';
+function getHint(number) {
+    if (number === randomNumber) {
+        return '¡Enhorabuena! Has acertado campeona';
+    } else if (number < MIN_NUMBER  || number > MAX_NUMBER) {
+        return 'El número debe estar entre 1 y 100';
+    } else if (number < randomNumber) {
+        return 'Demasiado bajo ¡sigue intentándolo!';
+    } else if (number > randomNumber) {
+        return 'Demasiado alto ¡sigue intentándolo!';
     } else {
-        hintElement.innerHTML ='¡Ups! Introduce tu número';
+       return '¡Ups! Introduce tu número';
     }
 }
 
+function showHint(element, text) {
+    element.innerHTML = text;
+}
 
-let counter = 0;
 function triesCounter () {
-    if (hintElement.innerHTML === '¡Enhorabuena! Has acertado campeona' || '¡Ups! Introduce tu número') {
+    if (HINT_ELEMENT.innerHTML === '¡Enhorabuena! Has acertado campeona' || HINT_ELEMENT.innerHTML === '¡Ups! Introduce tu número') {
         counter += 0;
-        triesElement.innerHTML = `Número de intentos: ${counter}`;
+        TRIES_ELEMENT.innerHTML = `Número de intentos: ${counter}`;
     } else {
         counter += 1;
-        triesElement.innerHTML = `Número de intentos: ${counter}`;
+        TRIES_ELEMENT.innerHTML = `Número de intentos: ${counter}`;
     }
 }
 
 function handlerNoSubmit(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
-    buttonElement.click();
   }
 }
-inputElement.addEventListener("keydown", handlerNoSubmit);
+INPUT_ELEMENT.addEventListener("keydown", handlerNoSubmit);
