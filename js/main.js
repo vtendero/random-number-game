@@ -40,7 +40,7 @@ function inputNumber () {
 
 let counter = 0;
 function triesCounter () {
-    if (hintElement.innerHTML === '¡Enhorabuena! Has acertado campeona') {
+    if (hintElement.innerHTML === '¡Enhorabuena! Has acertado campeona' || '¡Ups! Introduce tu número') {
         counter += 0;
         triesElement.innerHTML = `Número de intentos: ${counter}`;
     } else {

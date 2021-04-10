@@ -10,10 +10,14 @@
 --bgButton: #706E6E;
 --bgTitle: #FF0000;
 --colorTitle: #FFFF00;
+--colorBlack: black;
+--colorMotto: rgb(197, 195, 195);
+--fontRoboto: 'Roboto Slab', serif;
 }
 
 .page {
     background-image: url(../images/bg-toystory.jpg);
+    background-size: cover;
 }
 
 .main {
@@ -21,6 +25,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: calc(100vh - 130px);
 }
 
 .main__title {
@@ -113,3 +118,63 @@
     text-transform: uppercase;
     color: var(--blueBg);
 }
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background: var(--colorBlack);
+    border-top: 1px solid rgb(59, 59, 59);
+    margin-top: 20px;
+    padding: 10px;
+    height: 130px;
+}
+ 
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--colorText);
+    font-family: var(--fontRoboto);
+    font-size: 12px;
+    padding: 0 20px 10px;
+}
+
+.footer__info--motto {
+    font-family: var(--fontRoboto);
+    color: var(--colorMotto);
+    font-size: 10px;
+}
+
+.footer__socialMedia--icon {
+    font-size: 17px;
+    color: var(--colorText);
+    padding: 5px;
+    cursor: pointer;
+}
+    
+.footer__logo{
+    order: -1;
+    width: 90px;
+    border-radius: 80px;
+}
+
+@media all and (min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        height: 70px;
+        margin-bottom: 15px;
+        justify-content:flex-end;
+    }
+
+    .footer__info {
+        padding: 0 20px;
+    }
+    
+    .footer__logo {
+        order: 0
+    }
+}
+
